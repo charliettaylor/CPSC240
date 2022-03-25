@@ -65,6 +65,7 @@ segment .data
 
    string_input db "%s", 0
    g_constant dq 0x9.CCCCCCCCCCCCCCCCCCCD
+   ; apparently 0x4023 9999 9999 999A works too?
 
 
 segment .bss
@@ -92,8 +93,14 @@ gravity:
    pushf
 
    ; welcome message
+   ;push qword 0
    mov rax, 0
    mov rdi, intro ;put intro string in first param
+   call printf ;call func with given param
+
+   ;push qword 0
+   mov rax, 0
+   mov rdi, input_prompt ;put intro string in first param
    call printf ;call func with given param
 
    pop rax
