@@ -1,0 +1,16 @@
+break main
+break manager
+break get_input.asm:108
+break manager.asm:78
+break driver.cpp:15
+run params ... < stdin.txt
+p/x $rbp
+c
+p/d ($rbp-$rsp)/8+1
+c
+p/d $xmm11.v2_double[0]
+c
+x/8xw $rsp
+c
+p main::ret_val
+c
