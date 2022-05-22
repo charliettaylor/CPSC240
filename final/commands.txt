@@ -1,0 +1,19 @@
+break main
+break cube.cpp:15
+break volume
+break volume.asm:99
+break volume.asm:105
+break cube.cpp:17
+run params ... < input.txt
+p/x $rbp
+c
+p main::vol
+c
+p/x $rsp
+c
+p/d $xmm13.v2_double[0]
+c
+p/d $xmm10.v2_double[0]
+c
+p/x main::vol
+c
